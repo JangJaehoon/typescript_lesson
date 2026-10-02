@@ -122,6 +122,21 @@ const PC2: PC = {
   OSType: OS.Mac,
 };
 
+// 型の互換性
+const comp1 = "test";
+let comp2: string = comp1; // string 타입은 string 타입에 할당 가능
+
+let comp3: string = "test";
+// let comp4: "test" = comp3; // string 타입은 "test" 타입에 할당 불가
+
+let funcComp1 = (a: string) => {};
+let funcComp2 = (b: string) => {};
+funcComp1 = funcComp2; // 매개변수 타입이 같으므로 할당 가능
+
+let funcComp3 = (a: string) => {};
+let funcComp4 = (b: number) => {};
+// funcComp3 = funcComp4; // 매개변수 타입이 다르므로 할당 불가
+
 function App() {
   return (
     <div className="App">
