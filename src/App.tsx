@@ -67,6 +67,13 @@ let arrayUni: (number | string)[];
 arrayUni = [1, 2, 3, "hello"];
 // The end of Union Type
 
+// Literal Types
+let company: "Facebook" | "Google" | "Amazon";
+company = "Facebook";
+
+let memory: 256 | 512 | 1024;
+// memory = 12;
+
 function App() {
   return (
     <div className="App">
