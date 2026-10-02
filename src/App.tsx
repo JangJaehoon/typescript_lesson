@@ -55,6 +55,17 @@ const user: USER = {
   username: "hello",
   password: "1234",
 };
+// The end of Intersection Type
+
+// Union Type
+let value: boolean | number | string = true;
+value = false;
+value = 123;
+value = "hello";
+
+let arrayUni: (number | string)[];
+arrayUni = [1, 2, 3, "hello"];
+// The end of Union Type
 
 function App() {
   return (
