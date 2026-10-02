@@ -36,6 +36,26 @@ const func1 = (x: number, y: number): number => {
 };
 // return 값이 number 타입으로 지정되어있음.(생략가능)
 
+// Intersection Type
+type PROFILE = {
+  age: number;
+  city: string;
+};
+
+type LOGIN = {
+  username: string;
+  password: string;
+};
+
+type USER = PROFILE & LOGIN;
+
+const user: USER = {
+  age: 20,
+  city: "Tokyo",
+  username: "hello",
+  password: "1234",
+};
+
 function App() {
   return (
     <div className="App">
