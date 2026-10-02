@@ -101,6 +101,27 @@ let keySports: keyof typeof SPORTS;
 keySports = "soccer";
 keySports = "baseball";
 
+// enum: 열거형(列挙型) : 自動で連番が振られる。
+enum OS {
+  Windows, // 0
+  Mac, // 1
+  Linux, // 2
+}
+interface PC {
+  id: number;
+  OSType: OS;
+}
+
+const PC1: PC = {
+  id: 1,
+  OSType: OS.Windows,
+};
+
+const PC2: PC = {
+  id: 2,
+  OSType: OS.Mac,
+};
+
 function App() {
   return (
     <div className="App">
