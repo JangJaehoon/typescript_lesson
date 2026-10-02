@@ -86,6 +86,21 @@ let newAnimal: typeof animal = { cat: "big" };
 // newAnimal은 { cat: string } 타입으로 지정됨.
 // animalのデータ型を取得して、newAnimalに代入することができる。
 
+// keyof 연산자: オブジェクトのキーを取得する。
+type Animal = { cat: string; dog: string };
+let key: keyof Animal; // key는 "cat" | "dog" 타입으로 지정됨.
+key = "cat";
+key = "dog";
+
+// typeof + keyof
+const SPORTS = {
+  soccer: "Soccer",
+  baseball: "Baseball",
+};
+let keySports: keyof typeof SPORTS;
+keySports = "soccer";
+keySports = "baseball";
+
 function App() {
   return (
     <div className="App">
