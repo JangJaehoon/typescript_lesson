@@ -1,12 +1,46 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import "./css/App.module.css";
+
+const name = "hello";
+// const 변수는 값 변경 불가, 재할당 불가
+
+let nameChange = "hello";
+// let 변수는 값 변경 가능, 재할당 가능
+nameChange = "hello2";
+
+let username: string = "Hello";
+let dummyNum = 2;
+let bool = true;
+
+let array1 = [1, 2, 3];
+let array2: number[] = [1, 2, 3];
+let array3 = [1, 2, 3, "hello"];
+
+interface User {
+  name: string;
+  age: number;
+  first: string;
+  last: string | null; // string, null 둘 다 사용가능
+}
+
+let userObj: User = {
+  name: "hello",
+  age: 20,
+  first: "Yamada",
+  last: "Taro",
+};
+
+const func1 = (x: number, y: number): number => {
+  return x + y;
+};
+// return 값이 number 타입으로 지정되어있음.(생략가능)
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        {/* <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
@@ -17,7 +51,7 @@ function App() {
           rel="noopener noreferrer"
         >
           Learn React
-        </a>
+        </a> */}
       </header>
     </div>
   );
