@@ -72,7 +72,19 @@ let company: "Facebook" | "Google" | "Amazon";
 company = "Facebook";
 
 let memory: 256 | 512 | 1024;
-// memory = 12;
+// memory = 12; // error 발생, 256, 512, 1024만 가능
+
+// typeof 연산자: 宣言済のデータ型を取得する。
+let msg: string = "hello";
+let msg2: typeof msg; // msg2는 string 타입으로 지정됨.
+msg2 = "hello2";
+
+let animal = { cat: "small" };
+// 型 推論によって、データ型が { cat: string } であることがわかる。
+
+let newAnimal: typeof animal = { cat: "big" };
+// newAnimal은 { cat: string } 타입으로 지정됨.
+// animalのデータ型を取得して、newAnimalに代入することができる。
 
 function App() {
   return (
