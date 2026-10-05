@@ -137,6 +137,58 @@ let funcComp3 = (a: string) => {};
 let funcComp4 = (b: number) => {};
 // funcComp3 = funcComp4; // 매개변수 타입이 다르므로 할당 불가
 
+// Generics ジェネリックス
+interface GEN<T> {
+  item: T;
+}
+const get0: GEN<string> = { item: "hello" };
+const get2: GEN<number> = { item: 123 };
+
+// data typeをstringで固定した場合
+interface GEN2<T = string> {
+  item: T;
+}
+
+const get3: GEN2 = { item: "hello" }; // Tのデフォルトはstring
+
+interface GEN3<T extends string | number> {
+  item: T;
+}
+
+const get4: GEN3<string> = { item: "hello" };
+
+const get5: GEN3<number> = { item: 123 };
+
+// const get6: GEN3<boolean> = { item: true }; // error 발생, T는 string | number만 가능
+
+function funcGen<T>(props: T) {
+  return { item: props };
+}
+const get7 = funcGen<string>("hello");
+const get8 = funcGen<number | string | null>(123);
+const get9 = funcGen<number | string | null>(null);
+
+function funcGet1<T extends string | null>(props: T) {
+  return { value: props };
+}
+
+const get10 = funcGet1<string | null>("hello");
+const get11 = funcGet1<string | null>(null);
+
+interface Props {
+  price: number;
+}
+
+function funcGet2<T extends Props>(props: T) {
+  return { value: props.price };
+}
+
+const get12 = funcGet2({ price: 1000 });
+
+const funcGet3 = <T extends Props>(props: T) => {
+  return { value: props.price };
+};
+
 function App() {
   return (
     <div className="App">
