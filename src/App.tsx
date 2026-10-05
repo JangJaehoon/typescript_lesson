@@ -1,7 +1,9 @@
 import React from "react";
 import logo from "./logo.svg";
+
 import "./css/App.module.css";
 import Data from "./data.json";
+import TestComponent from "./TestComponent";
 
 type USERS = typeof Data;
 
@@ -192,10 +194,11 @@ const funcGet3 = <T extends Props>(props: T) => {
   return { value: props.price };
 };
 
-function App() {
+const App: React.FC = () => {
   return (
     <div className="App">
       <header className="App-header">
+        <TestComponent text="Hello, React!" />
         {/* <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
@@ -211,6 +214,6 @@ function App() {
       </header>
     </div>
   );
-}
+};
 
 export default App;
