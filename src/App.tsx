@@ -1,6 +1,9 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./css/App.module.css";
+import Data from "./data.json";
+
+type USERS = typeof Data;
 
 const name = "hello";
 // const 변수는 값 변경 불가, 재할당 불가
